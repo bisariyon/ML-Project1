@@ -1,0 +1,6 @@
+setuptools
+ipykernel
+pandas
+numpy
+seaborn
+-e .
