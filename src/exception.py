@@ -1,4 +1,5 @@
 import sys
+from src.logger import logging
 
 def error_message_detail(error_message, error_detail:sys):
     _,_,exc_traceback = error_detail.exc_info()
@@ -25,6 +26,7 @@ class CustomException(Exception):
             error_detail
         )
 
+        logging.error(self.error_message) #Automatic logging
 
     def __str__(self):
         return self.error_message

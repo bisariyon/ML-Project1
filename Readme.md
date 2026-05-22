@@ -22,3 +22,8 @@ pip install -e .
 4. Created the basic structure including components and pipeline folder.
 
 5. Exception handling and logging is added in the code.
+For now automatic loggin implementation in the exception.py file is done
+
+6. EDA and model training is done in the notebook for better understanding and visualization of the data.
+
+7. 
