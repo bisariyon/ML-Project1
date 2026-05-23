@@ -17,7 +17,6 @@
 """
 
 from dataclasses import dataclass
-import logging
 import os
 import random
 import sys
@@ -27,8 +26,9 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-from src import logger
+from src.components.data_transformation import DataTransformation
 from src.exception import CustomException
+from src.logger import logging
 
 @dataclass
 class DataIngestionConfig:
@@ -90,8 +90,19 @@ class DataIngestion:
 
 if __name__ == '__main__':
 
+    logging.info("Entering data Ingestion")
     data_ingestion_obj = DataIngestion()
     train_data_path, test_data_path = data_ingestion_obj.initiate_data_ingestion()
+    logging.info("Exited data Ingestion")
 
-    print(train_data_path)
-    print(test_data_path)
+
+    logging.info("Entering data transformation")
+    data_transformation_obj = DataTransformation()
+    train_arr, test_arr, _ = data_transformation_obj.inititate_data_transformation(train_data_path, test_data_path)
+    logging.info("Exited data transformation")
+
+    # df_train = pd.DataFrame(train_arr)
+    # df_train.to_csv('train.csv')
+
+    # df_test = pd.DataFrame(train_arr)
+    # df_test.to_csv('test.csv')
