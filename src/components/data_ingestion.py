@@ -27,6 +27,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 from src.exception import CustomException
 from src.logger import logging
 
@@ -101,8 +102,17 @@ if __name__ == '__main__':
     train_arr, test_arr, _ = data_transformation_obj.inititate_data_transformation(train_data_path, test_data_path)
     logging.info("Exited data transformation")
 
-    # df_train = pd.DataFrame(train_arr)
-    # df_train.to_csv('train.csv')
 
-    # df_test = pd.DataFrame(train_arr)
-    # df_test.to_csv('test.csv')
+    logging.info("Entering model training")
+    model_trainer = ModelTrainer()
+    r2,best_model_name, best_model, trained_models, model_report = model_trainer.initiate_model_trainer(train_arr, test_arr)
+    
+    print("=" * 50)
+    print(f"Best Model Name : {best_model_name}")
+    print(f"\nBest Model Object :\n{best_model}")
+    print(f"\nFinal R2 Score : {r2}")
+    print(f"\nTrained models: {trained_models}")
+    print(f"\nModels report: {model_report}")
+    print("=" * 50)
+
+    logging.info("Exited model training")
