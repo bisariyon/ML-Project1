@@ -26,4 +26,22 @@ For now automatic loggin implementation in the exception.py file is done
 
 6. EDA and model training is done in the notebook for better understanding and visualization of the data.
 
-7. 
+7. Next created the data ingestion component which is responsible for reading the data and splitting it into train and test sets.
+8. Then created the data transformation component which is responsible for transforming the data and making it ready for model training.
+9. Finally created the model training component which is responsible for training the model and saving it
+
+10. Next I created the Predict pipeline which is responsible for loading the model and making predictions on new data.
+
+11. Next main the entry point train_pipeline.py
+
+## To run the train pipeline
+```bash
+python src/pipeline/train_pipeline.py
+```
+
+## To run the Flask app that handles prediction:
+```bash
+python app.py
+```
+
+

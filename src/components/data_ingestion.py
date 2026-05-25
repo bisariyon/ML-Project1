@@ -46,7 +46,7 @@ class DataIngestion:
         logging.info('Entered data ingestion component')
         
         try:
-            df = pd.read_csv('notebook\data\StudentsPerformance.csv')
+            df = pd.read_csv(r'notebook\data\StudentsPerformance.csv')
             logging.info('Read data from csv')
 
             df.columns = (
@@ -87,32 +87,3 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e,sys)
-
-
-if __name__ == '__main__':
-
-    logging.info("Entering data Ingestion")
-    data_ingestion_obj = DataIngestion()
-    train_data_path, test_data_path = data_ingestion_obj.initiate_data_ingestion()
-    logging.info("Exited data Ingestion")
-
-
-    logging.info("Entering data transformation")
-    data_transformation_obj = DataTransformation()
-    train_arr, test_arr, _ = data_transformation_obj.inititate_data_transformation(train_data_path, test_data_path)
-    logging.info("Exited data transformation")
-
-
-    logging.info("Entering model training")
-    model_trainer = ModelTrainer()
-    r2,best_model_name, best_model, trained_models, model_report = model_trainer.initiate_model_trainer(train_arr, test_arr)
-    
-    print("=" * 50)
-    print(f"Best Model Name : {best_model_name}")
-    print(f"\nBest Model Object :\n{best_model}")
-    print(f"\nFinal R2 Score : {r2}")
-    print(f"\nTrained models: {trained_models}")
-    print(f"\nModels report: {model_report}")
-    print("=" * 50)
-
-    logging.info("Exited model training")
