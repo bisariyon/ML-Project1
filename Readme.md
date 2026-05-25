@@ -44,4 +44,3 @@ python src/pipeline/train_pipeline.py
 python app.py
 ```
 
-
