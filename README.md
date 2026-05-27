@@ -36,7 +36,7 @@ The goal of this project is to understand how different factors affect student a
 
 ## Live Application
 
-🚀 [Open Live App](https://bisariyon-ml-students-performance.hf.space/predictdata)
+🚀 [Open Live App](https://bisariyon-ml-students-performance.hf.space)
 
 ---
 
