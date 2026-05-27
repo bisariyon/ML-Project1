@@ -38,7 +38,16 @@ def predict_datapoint():
         results=predict_pipeline.predict(pred_df)
         logging.info("After Prediction")
 
-        return render_template('home.html',results=results[0])
+        return render_template('home.html',
+            results=results[0],
+            gender=request.form.get('gender'),
+            ethnicity=request.form.get('ethnicity'),
+            parental_education=request.form.get('parental_level_of_education'),
+            lunch=request.form.get('lunch'),
+            test_prep=request.form.get('test_preparation_course'),
+            reading_score=request.form.get('reading_score'),
+            writing_score=request.form.get('writing_score')
+        )
 
 
 if __name__ == '__main__':
