@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Predict student math exam performance using ML. Enter student details to get an instant score prediction.">
+    <meta name="description"
+        content="Predict student math exam performance using ML. Enter student details to get an instant score prediction.">
     <title>Student Performance Predictor | ML Insights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -82,13 +87,23 @@
         }
 
         @keyframes blob1 {
-            0%   { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 8%) scale(1.12); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(5%, 8%) scale(1.12);
+            }
         }
 
         @keyframes blob2 {
-            0%   { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-6%, -5%) scale(1.1); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(-6%, -5%) scale(1.1);
+            }
         }
 
         /* Page header */
@@ -125,8 +140,17 @@
         }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50%       { opacity: 0.4; transform: scale(0.7); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
         }
 
         .page-header h1 {
@@ -159,14 +183,16 @@
             border: 1px solid var(--border-glass);
             border-radius: 24px;
             padding: 44px 48px;
-            box-shadow: var(--shadow-glow), 0 24px 64px rgba(0,0,0,0.4);
+            box-shadow: var(--shadow-glow), 0 24px 64px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 1;
             animation: fadeUp 0.9s ease both 0.1s;
         }
 
         @media (max-width: 640px) {
-            .card { padding: 30px 22px; }
+            .card {
+                padding: 30px 22px;
+            }
         }
 
         .card-title {
@@ -196,7 +222,9 @@
         }
 
         @media (max-width: 560px) {
-            form { grid-template-columns: 1fr; }
+            form {
+                grid-template-columns: 1fr;
+            }
         }
 
         .form-group {
@@ -286,7 +314,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
             opacity: 0;
             transition: opacity 0.2s;
         }
@@ -297,7 +325,9 @@
             filter: brightness(1.1);
         }
 
-        .btn-submit:hover::after { opacity: 1; }
+        .btn-submit:hover::after {
+            opacity: 1;
+        }
 
         .btn-submit:active {
             transform: translateY(0);
@@ -324,7 +354,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -370,13 +400,27 @@
 
         /* Animations */
         @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Footer */
@@ -394,6 +438,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header class="page-header">
@@ -466,35 +511,19 @@
 
             <div class="form-group">
                 <label for="reading_score">Reading Score (0–100)</label>
-                <input
-                    id="reading_score"
-                    class="form-control"
-                    type="number"
-                    name="reading_score"
-                    placeholder="e.g. 72"
-                    min="0"
-                    max="100"
-                    required
-                />
+                <input id="reading_score" class="form-control" type="number" name="reading_score" placeholder="e.g. 72"
+                    min="0" max="100" required />
                 <span class="score-hint">Enter your reading exam score out of 100</span>
             </div>
 
             <div class="form-group">
                 <label for="writing_score">Writing Score (0–100)</label>
-                <input
-                    id="writing_score"
-                    class="form-control"
-                    type="number"
-                    name="writing_score"
-                    placeholder="e.g. 68"
-                    min="0"
-                    max="100"
-                    required
-                />
+                <input id="writing_score" class="form-control" type="number" name="writing_score" placeholder="e.g. 68"
+                    min="0" max="100" required />
                 <span class="score-hint">Enter your writing exam score out of 100</span>
             </div>
 
-            <input class="btn-submit" type="submit" value="✦ Predict Math Score" />
+            <input class="btn-submit" type="submit" value="Predict Math Score" />
 
         </form>
 
@@ -512,4 +541,5 @@
     </footer>
 
 </body>
+
 </html>
